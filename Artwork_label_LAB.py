@@ -1,16 +1,23 @@
 class Artist:
-    # TODO: Define constructor with parameters to initialize instance attributes
-    #       (name, birth_year, death_year)
-
-    # TODO: Define print_info() method. If death_year is -1, only print birth_year
-
+    def __init__(self, name, birth_year, death_year):
+        self.name = name
+        self.birth_year = birth_year
+        self.death_year = death_year
+        
+    def print_info(self):
+            if self.death_year == -1 :
+                print('Artist:', self.name, 'born', self.birth_year)
+            else:
+                print( 'Artist:', self.name, '(' + str(self.birth_year) + '-' + str(self.death_year) + ')' )
       
 class Artwork:
-    # TODO: Define constructor with parameters to initialize instance attributes
-    #       (title, year_created, artist)
-
-    # TODO: Define print_info() method
-
+    def __init__(self, title, year_created, artist):
+        self.title = title
+        self.year_created = year_created
+        self.artist = artist    
+    def print_info(self):
+        self.artist.print_info()
+        print('Title:',self.title +',',self.year_created)
 
 if __name__ == "__main__":
     user_artist_name = input()
